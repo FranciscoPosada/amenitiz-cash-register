@@ -1,13 +1,23 @@
 class CashRegistersController < ApplicationController
   before_action :set_cart
 
+  def menu
+    # The menu action shows links to other actions
+  end
+
   def index
     @products = store_products
   end
 
   def add_item
-    @cart.add_item(params[:product_code])
+    product_code = params[:product_code]
+    @cart.add_item(product_code)
+    save_cart_to_session
     redirect_to cart_path
+  end
+
+  def cart
+    @store_products = store_products
   end
 
   def checkout
@@ -26,6 +36,10 @@ class CashRegistersController < ApplicationController
   end
 
   def set_cart
-    @cart = Cart.new  # Replace with session-based cart persistence later
+    @cart = session[:cart] ? Cart.new(session[:cart]) : Cart.new
+  end
+
+  def save_cart_to_session
+    session[:cart] = @cart.items
   end
 end
