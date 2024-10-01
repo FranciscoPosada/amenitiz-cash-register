@@ -27,6 +27,13 @@ class CashRegistersController < ApplicationController
     @total = @cart.total_price(pricing_rules)
   end
 
+  def remove_item
+    product_code = params[:product_code]
+    @cart.remove_item(product_code)
+    save_cart_to_session
+    redirect_to cart_path, notice: "#{store_products[product_code][:name]} removed from your cart."
+  end
+
   private
 
   def store_products
@@ -46,7 +53,6 @@ class CashRegistersController < ApplicationController
   end
 
   def exit
-    # This action renders the exit "Thank you" page
+    
   end
-  
 end
