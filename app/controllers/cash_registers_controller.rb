@@ -44,4 +44,9 @@ class CashRegistersController < ApplicationController
   def save_cart_to_session
     session[:cart] = @cart.items
   end
+
+  def exit
+    # This action renders the exit "Thank you" page
+  end
+  
 end

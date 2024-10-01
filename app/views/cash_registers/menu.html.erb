@@ -1,9 +1,23 @@
-<h1>Welcome to Amenitiz Cash Register</h1>
-<p>Please select an option:</p>
+<h1 class="menu-title">Amenitiz Cash Register</h1>
 
-<ul>
-  <li><%= link_to 'View Available Products', items_path %></li>
-  <li><%= link_to 'View Discounts', discounts_path %></li>
-  <li><%= link_to 'View Cart', cart_path %></li>
-  <li><%= link_to 'Checkout', checkout_path %></li>
-</ul>
+<div class="menu-grid">
+  <%= link_to items_path, class: 'menu-tile shop' do %>
+    <i class="fas fa-shopping-basket fa-3x"></i>
+    <p>Shop</p>
+  <% end %>
+
+  <%= link_to cart_path, class: 'menu-tile cart' do %>
+    <i class="fas fa-shopping-cart fa-3x"></i>
+    <p>View Cart</p>
+  <% end %>
+
+  <%= link_to checkout_path, class: 'menu-tile checkout' do %>
+    <i class="fas fa-cash-register fa-3x"></i>
+    <p>Checkout</p>
+  <% end %>
+
+   <%= link_to exit_path, class: 'menu-tile exit' do %>
+    <i class="fas fa-door-open fa-3x"></i>
+    <p>Exit</p>
+  <% end %>
+</div>
