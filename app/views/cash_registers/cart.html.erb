@@ -3,11 +3,17 @@
 <% if @cart.items.empty? %>
   <p>Your cart is empty.</p>
 <% else %>
-  <ul>
+  <ul class="cart-list">
     <% @cart.items.each do |item_code, quantity| %>
-      <li>
-        <%= @store_products[item_code][:name] %> (x<%= quantity %>)
-        <%= button_to 'Remove', remove_item_path(product_code: item_code), method: :post, class: "remove-button" %>
+      <% total_item_price = @store_products[item_code][:price] * quantity %>
+      <li class="cart-item">
+        <div class="item-details">
+          <div><%= @store_products[item_code][:name] %> (x<%= quantity %>)</div>
+          <div><%= number_to_currency(total_item_price) %></div>
+        </div>
+        <%= button_to remove_item_path(product_code: item_code), method: :post, class: "remove-button" do %>
+          <i class="fas fa-trash-alt"></i> Remove
+        <% end %>
       </li>
     <% end %>
   </ul>
