@@ -13,11 +13,13 @@ class CashRegistersController < ApplicationController
     product_code = params[:product_code]
     @cart.add_item(product_code)
     save_cart_to_session
-    redirect_to cart_path
+    redirect_to items_path, notice: "#{store_products[product_code][:name]} added to your cart."
   end
 
   def cart
     @store_products = store_products
+    pricing_rules = PricingRules.new(@store_products)
+    @total_price = @cart.total_price(pricing_rules)
   end
 
   def checkout
