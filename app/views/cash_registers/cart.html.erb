@@ -5,13 +5,12 @@
 <% else %>
   <ul>
     <% @cart.items.each do |item_code, quantity| %>
-      <li><%= @store_products[item_code][:name] %> (x<%= quantity %>)</li>
+      <li>
+        <%= @store_products[item_code][:name] %> (x<%= quantity %>)
+        <%= button_to 'Remove', remove_item_path(product_code: item_code), method: :post, class: "remove-button" %>
+      </li>
     <% end %>
   </ul>
 
-  <p><strong>Total: <%= number_to_currency(@total_price, unit: "€") %></strong></p> <!-- Display the total price -->
+  <%= link_to 'Checkout', checkout_path, class: 'btn btn-primary' %>
 <% end %>
-
-<%= link_to 'Back to Products', items_path %>
-<%= link_to 'Proceed to Checkout', checkout_path %>
-
