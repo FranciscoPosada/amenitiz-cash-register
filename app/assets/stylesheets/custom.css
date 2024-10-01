@@ -73,7 +73,6 @@ button:hover, a:hover {
   margin-bottom: 30px;
 }
 
-/* Grid layout for the menu tiles */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -82,7 +81,6 @@ button:hover, a:hover {
   margin: 0 auto;
 }
 
-/* Individual tile styles */
 .menu-tile {
   display: flex;
   flex-direction: column;
@@ -93,12 +91,12 @@ button:hover, a:hover {
   color: white;
   font-size: 1.5rem;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
   text-decoration: none;
 }
 
-.menu-tile i {
-  margin-bottom: 10px;
+.menu-tile:hover {
+  transform: scale(1.05);
 }
 
 .shop {
@@ -117,22 +115,11 @@ button:hover, a:hover {
   background-color: #e74c3c;
 }
 
-.menu-tile:hover {
-  transform: scale(1.05);
+.menu-tile i {
+  margin-bottom: 10px;
 }
 
-.exit-message {
-  text-align: center;
-  margin-top: 100px;
-}
-
-.exit-message i {
-  color: #4CAF50; 
-  margin-bottom: 20px;
-}
-
-.exit-message h1 {
-  font-size: 2.5rem;
-  color: #333;
-  font-family: 'Sora', sans-serif;
+.menu-tile p {
+  margin: 0;
+  font-weight: 600;
 }
