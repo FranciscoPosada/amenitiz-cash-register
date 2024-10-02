@@ -1,0 +1,54 @@
+.menu-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.menu-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-tile:hover {
+  transform: scale(1.05);
+}
+
+.shop {
+  background-color: #4CAF50;
+}
+
+.cart {
+  background-color: #f39c12;
+}
+
+.checkout {
+  background-color: #3498db;
+}
+
+.exit {
+  background-color: #e74c3c;
+}
+
+.menu-tile i {
+  margin-bottom: 10px;
+}
+
+.menu-tile p {
+  margin: 0;
+  font-weight: 600;
+}
