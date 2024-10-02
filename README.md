@@ -100,6 +100,10 @@ To run all the tests, use the following command:
 
 ## Roadmap
 
+- **User Authentication**: Implement user accounts to allow users to save their carts and purchase history and admin accounts to control stock.
+
+- **Order History**: Allow users to view their previous purchases and receipts.
+
 ## Contributing
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement"
