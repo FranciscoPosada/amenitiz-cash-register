@@ -1,8 +1,15 @@
-<h1>Checkout</h1>
-<p>All discounts are applied automatically at checkout</p>
-<p>Total: <%= number_to_currency(@total, unit: "€", format: "%n %u") %></p>
+<h1 class="menu-title">Checkout</h1>
 
-<div class="checkout-actions">
-  <%= link_to 'Back to Cart', cart_path, class: 'btn btn-secondary' %>
-  <%= button_to 'Confirm Purchase', confirm_checkout_path, method: :post, class: 'btn btn-primary' %>
+<div class="container">
+  <p>All discounts are applied automatically at checkout</p>
+  <p>Total: <%= number_to_currency(@total, unit: "€", format: "%n %u") %></p>
+
+  <div class="checkout-actions">
+    <%= link_to 'Back to Cart', cart_path, class: 'btn btn-secondary' %>
+
+    <% if @cart.items.any? %>
+      <%= button_to 'Confirm Purchase', confirm_checkout_path, method: :post, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>
+
