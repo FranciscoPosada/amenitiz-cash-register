@@ -1,6 +1,5 @@
 <h1>Available Products</h1>
 
-<!-- Display any available discounts -->
 <div class="discounts">
   <h3>Available Discounts:</h3>
   <ul>
@@ -10,7 +9,6 @@
   </ul>
 </div>
 
-<!-- List of available products -->
 <ul>
   <% @products.each do |code, product| %>
     <li>
@@ -20,12 +18,9 @@
   <% end %>
 </ul>
 
-<!-- Conditionally display the View Cart button if the cart has items -->
 <% if @cart.items.any? %>
   <%= link_to 'View Cart', cart_path, class: 'btn btn-secondary' %>
 <% end %>
 
-<!-- Option to proceed to checkout (still available without items in the cart) -->
 <%= link_to 'Proceed to Checkout', checkout_path, class: 'btn btn-primary' %>
 <%= link_to 'Back to Menu', root_path, class: 'btn btn-secondary' %>
-
