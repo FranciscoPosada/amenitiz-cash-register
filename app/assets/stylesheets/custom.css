@@ -5,6 +5,7 @@ body {
 button, a {
   font-weight: 600;
 }
+
 .container {
   max-width: 600px;
   margin: 50px auto;
@@ -37,13 +38,14 @@ ul li:last-child {
   border-bottom: none;
 }
 
+/* All buttons except the main menu tiles should be blue */
 button, a {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #007bff; /* Blue for all other buttons */
   color: white;
   text-decoration: none;
   font-size: 1rem;
@@ -51,7 +53,7 @@ button, a {
 }
 
 button:hover, a:hover {
-  background-color: #45a049;
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .cart-total {
@@ -81,6 +83,7 @@ button:hover, a:hover {
   margin: 0 auto;
 }
 
+/* Keep menu tiles with their distinct colors */
 .menu-tile {
   display: flex;
   flex-direction: column;
@@ -100,19 +103,19 @@ button:hover, a:hover {
 }
 
 .shop {
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Green for shop tile */
 }
 
 .cart {
-  background-color: #f39c12;
+  background-color: #f39c12; /* Orange for cart tile */
 }
 
 .checkout {
-  background-color: #3498db;
+  background-color: #3498db; /* Blue for checkout tile */
 }
 
 .exit {
-  background-color: #e74c3c;
+  background-color: #e74c3c; /* Red for exit tile */
 }
 
 .menu-tile i {
@@ -124,18 +127,107 @@ button:hover, a:hover {
   font-weight: 600;
 }
 
-.exit-message {
+/* Exit page styling */
+.exit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
   text-align: center;
-  margin-top: 100px;
 }
 
 .exit-message i {
   color: #4CAF50;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .exit-message h1 {
   font-size: 2.5rem;
   color: #333;
-  font-family: 'Sora', sans-serif;
+  margin: 10px 0;
+}
+
+.exit-message p {
+  margin-bottom: 20px;
+}
+
+/* Cart item styling */
+.cart-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.remove-button {
+  background-color: transparent;
+  border: none;
+  color: #e74c3c;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.remove-button i {
+  margin-right: 5px;
+}
+
+.remove-button:hover {
+  color: #c0392b;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #007bff; /* Blue for all buttons */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+h2 {
+  margin-top: 30px;
+  color: #333;
+}
+
+.discount-list {
+  margin-top: 15px;
+  padding-left: 20px;
+  color: #555;
+}
+
+.discount-list li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.checkout-actions {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  gap: 10px; /* Adds space between buttons */
+}
+
+.checkout-actions .btn {
+  display: inline-block; /* Ensure the buttons are inline elements */
+  margin: 0; /* Reset any default margin */
 }

@@ -1,11 +1,31 @@
 <h1>Available Products</h1>
 
+<!-- Display any available discounts -->
+<div class="discounts">
+  <h3>Available Discounts:</h3>
+  <ul>
+    <li>Buy-one-get-one-free on Green Tea</li>
+    <li>Strawberries: 4.50€ each when you buy 3 or more</li>
+    <li>Coffee: 2/3 price discount when you buy 3 or more</li>
+  </ul>
+</div>
+
+<!-- List of available products -->
 <ul>
   <% @products.each do |code, product| %>
-    <li><%= product[:name] %> (Code: <%= code %>) - <%= product[:price] %>€
-      <%= button_to "Add to Cart", add_item_path(product_code: code), method: :post %>
+    <li>
+      <%= product[:name] %> - <%= number_to_currency(product[:price]) %>
+      <%= button_to "Add to Cart", add_item_path(product_code: code), method: :post, class: "btn btn-primary" %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'Back to Menu', root_path %>
+<!-- Conditionally display the View Cart button if the cart has items -->
+<% if @cart.items.any? %>
+  <%= link_to 'View Cart', cart_path, class: 'btn btn-secondary' %>
+<% end %>
+
+<!-- Option to proceed to checkout (still available without items in the cart) -->
+<%= link_to 'Proceed to Checkout', checkout_path, class: 'btn btn-primary' %>
+<%= link_to 'Back to Menu', root_path, class: 'btn btn-secondary' %>
+
