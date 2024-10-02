@@ -6,7 +6,7 @@
 <% else %>
   <ul class="cart-list">
     <% @cart.items.each do |item_code, quantity| %>
-      <% total_item_price = @pricing_rules.apply(item_code, quantity) %> <!-- Use @pricing_rules here -->
+      <% total_item_price = @pricing_rules.apply(item_code, quantity) %>
       <li class="cart-item">
         <div class="item-details">
           <div><%= @store_products[item_code][:name] %> (x<%= quantity %>)</div>
@@ -27,4 +27,3 @@
 <% end %>
 
 <%= link_to 'Back to Menu', root_path, class: 'btn btn-secondary' %>
-

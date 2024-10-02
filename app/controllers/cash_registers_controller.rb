@@ -2,12 +2,11 @@ class CashRegistersController < ApplicationController
   before_action :set_cart
 
   def menu
-    # The menu action shows links to other actions
   end
 
   def index
     @products = store_products
-    @discounts = available_discounts # Add discounts to the index action
+    @discounts = available_discounts
   end
 
   def add_item
@@ -19,7 +18,7 @@ class CashRegistersController < ApplicationController
 
   def cart
     @store_products = store_products
-    @pricing_rules = PricingRules.new(@store_products) # Make this an instance variable by adding '@'
+    @pricing_rules = PricingRules.new(@store_products)
     @total_price = @cart.total_price(@pricing_rules)
   end
 
@@ -36,12 +35,12 @@ class CashRegistersController < ApplicationController
   end
 
   def confirm_checkout
-    session[:cart] = nil # Clear the cart
+    session[:cart] = nil
     redirect_to exit_path, notice: 'Thank you for your purchase!'
   end
 
   def exit
-    session[:cart] = nil # Clear the cart on exit
+    session[:cart] = nil
   end
 
   private
