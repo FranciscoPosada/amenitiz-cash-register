@@ -19,11 +19,16 @@ Below are the steps necessary to get the application up and running.
 
 ### Ruby Version
 
-Ensure you are using the correct version of Ruby. This project uses:
+- Ruby version 3.1.2p20 (or later)
+
+Ensure that you have Ruby version 3.1.2p20 (or later) installed on your local device. If you don't have Ruby installed, you can install it by following the instructions from the official [Ruby documentation](https://www.ruby-lang.org/en/documentation/installation/).
+
+Verify your Ruby version by running:
 
 ```bash
-ruby 3.1.2
+ruby -v
 ```
+
 
 ### System Dependencies
 
