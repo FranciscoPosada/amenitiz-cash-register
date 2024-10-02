@@ -10,11 +10,10 @@ Below are the steps necessary to get the application up and running.
 
 1. [Ruby Version](#ruby-version)
 2. [System Dependencies](#system-dependencies)
-3. [Installation & Setup](#installation--setup)
-4. [Database Creation & Initialization](#database-creation--initialization)
-5. [Running the Application](#running-the-application)
-6. [Running the Test Suite](#running-the-test-suite)
-7. [Deployment Instructions](#deployment-instructions)
+3. [Installation & Setup](#installation-and-setup)
+4. [Running the Application](#running-the-application)
+5. [Testing](#testing)
+6. [Contributing](#contributing)
 
 ---
 
