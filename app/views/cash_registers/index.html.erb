@@ -1,7 +1,7 @@
 <h1>Available Products</h1>
 
 <div class="discounts">
-  <h3>Available Discounts:</h3>
+  <h3> Discounts:</h3>
   <ul>
     <li>Buy-one-get-one-free on Green Tea</li>
     <li>Strawberries: 4.50€ each when you buy 3 or more</li>
@@ -12,7 +12,7 @@
 <ul>
   <% @products.each do |code, product| %>
     <li>
-      <%= product[:name] %> - <%= number_to_currency(product[:price]) %>
+      <%= product[:name] %> - <%= number_to_currency(product[:price], unit: "€", format: "%n %u") %>
       <%= button_to "Add to Cart", add_item_path(product_code: code), method: :post, class: "btn btn-primary" %>
     </li>
   <% end %>
