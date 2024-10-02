@@ -1,0 +1,22 @@
+.exit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+}
+
+.exit-message i {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.exit-message h1 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
+.exit-message p {
+  margin-bottom: 20px;
+}

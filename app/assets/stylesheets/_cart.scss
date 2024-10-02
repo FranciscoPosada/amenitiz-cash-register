@@ -1,0 +1,30 @@
+.cart-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.remove-button {
+  background-color: transparent;
+  border: none;
+  color: #e74c3c;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.remove-button i {
+  margin-right: 5px;
+}
+
+.remove-button:hover {
+  color: #c0392b;
+}
