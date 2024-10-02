@@ -1,15 +1,16 @@
 <h1>Your Cart</h1>
 
 <% if @cart.items.empty? %>
-  <p>Your cart is empty.</p>
+  <p>Your cart is empty! <br/>
+  <%= link_to 'Start adding items to your cart now', items_path, class: 'btn btn-primary' %></p>
 <% else %>
   <ul class="cart-list">
     <% @cart.items.each do |item_code, quantity| %>
-      <% total_item_price = @store_products[item_code][:price] * quantity %>
+      <% total_item_price = @pricing_rules.apply(item_code, quantity) %> <!-- Use @pricing_rules here -->
       <li class="cart-item">
         <div class="item-details">
           <div><%= @store_products[item_code][:name] %> (x<%= quantity %>)</div>
-          <div><%= number_to_currency(total_item_price) %></div>
+          <div><%= number_to_currency(total_item_price, unit: "€", format: "%n %u") %></div>
         </div>
         <%= button_to remove_item_path(product_code: item_code), method: :post, class: "remove-button" do %>
           <i class="fas fa-trash-alt"></i> Remove
@@ -17,7 +18,13 @@
       </li>
     <% end %>
   </ul>
-
-  <%= link_to 'Checkout', checkout_path, class: 'btn btn-primary' %>
-  <%= link_to 'Back to Menu', root_path %>
 <% end %>
+
+<% if @cart.items.any? %>
+  <%= link_to 'Checkout', checkout_path, class: 'btn btn-primary' %>
+<% else %>
+  <button class="btn btn-primary" disabled>Checkout</button>
+<% end %>
+
+<%= link_to 'Back to Menu', root_path, class: 'btn btn-secondary' %>
+
